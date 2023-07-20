@@ -46,7 +46,7 @@ function crearContacto(id, nombre, apellido, telefono, ciudad, direccion) {
     const contacto = {
       nombre: nombre,
       apellido: apellido,
-      telefono: telefono,
+      teléfono: teléfono,
       ciudad: ciudad,
       direccion: direccion,
     };
@@ -56,4 +56,34 @@ function crearContacto(id, nombre, apellido, telefono, ciudad, direccion) {
   function eliminarContacto(id) {
     contactos = contactos.filter((contacto) => contacto.id !== id);
   }
+// Supongamos que queremos actualizar el contacto con email "angie.g@gmail.com"
+const emailActualizar = "angie.g@gmail.com";
+const nuevosDatos = {
+  nombre: "Angie García",
+  telefono: "310-123-4567",
+};
+
+actualizarContacto(emailActualizar, nuevosDatos);
+
+  function actualizarContacto(email, nuevosDatos) {
+    const contactoIndex = contactos.findIndex((contacto) => contacto.email === email);
+  
+    if (contactoIndex !== -1) {
+      contactos[contactoIndex] = {
+        ...contactos[contactoIndex],
+        ...nuevosDatos,
+      };
+    } else {
+      console.log("El contacto no fue encontrado.");
+    }
+  }
+  
+// Si queremos actualizar el contacto con email "angie.g@gmail.com"
+const emailActualizar = "angie.g@gmail.com";
+const nuevosDatos = {
+  nombre: "Angie García",
+  telefono: "310-123-4567",
+};
+
+actualizarContacto(emailActualizar, nuevosDatos);
 

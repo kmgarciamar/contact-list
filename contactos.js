@@ -49,6 +49,9 @@ function agregarContacto(nombre, email, teléfono) {
   });
 }
 
+agregarContacto("Karen", "karen.milena62@gmail.com", "3103075700");
+
+
 function eliminarContacto(nombre) {
   for (let i = 0; i < contactos.length; i++) {
     if (contactos[i].nombre === nombre) {
